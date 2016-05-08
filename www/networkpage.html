@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>navigator.connection.type</title>
+
+	<link href="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\css\site.css" rel="stylesheet">
+<link href="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\csscss\index.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+	
+	
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        checkConnection();
+    }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Mobile 2G connection';
+            states[Connection.CELL_3G]  = 'Mobile 3G connection';
+            states[Connection.CELL_4G]  = 'Mobile 4G connection';
+            states[Connection.CELL]     = 'Mobile generic connection';
+            states[Connection.NONE]     = 'No network';
+
+            alert('Type of connection: ' + states[networkState]);
+        }
+
+    </script>
+  </head>
+  <body>
+  <nav id="nav01"></nav>
+
+<div id="main">
+
+
+  <footer id="foot01"></footer>
+</div>
+    <p>Network Connection status</p>
+	<script src="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\js\script.js"></script>
+  </body>
+</html>

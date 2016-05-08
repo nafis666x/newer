@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>
+	BEEP AND VIBRATE
+	</title>
+<link href="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\css\site.css" rel="stylesheet">
+<link href="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\css\index.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    //Device API libraries are loading
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    //Device APIs are ready
+    function onDeviceReady() {
+        
+    }
+
+    //This is for 2 bells
+    function playBeep2() {
+        navigator.notification.beep(2);
+    }
+
+    //This is for 2 vibrates
+    function vibrate2() {
+        navigator.notification.vibrate(2000);
+    }
+    </script>
+  </head>
+  <body>
+  
+  <div id="topbar">
+  <a href="#">Home</a>
+  </div>
+  
+  <div id="w">
+    <div id="content">
+      <nav id="stickynav">
+        <ul id="nav" class="clearfix">
+          <li><a href="#topbar">Homepage</a></li>
+          <li><a href ="#about" onclick="networkshow();">Network</a></li>
+        </ul>
+      </nav>
+  <nav id="nav01"></nav>
+  
+  <h1>Single page navigation</h1>
+     <br>
+	 <br>
+	 <p>Please press me below and ring a bell</p>
+<p><a href="#" onclick="playBeep2(); return false;"> 
+	Ring a Bell 
+	</a></p><br><br><br>
+	<br>
+	<p>Please vibrate me by pressing below</p>
+    <p><a href="#" onclick="vibrate2(); return false;">
+	Vibrate me
+	</a></p>
+	
+    <br>
+	<br>
+	<br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<section id="about" class="section">
+      <h2>Network type</h2>
+	  <script type="text/javascript" charset="utf-8">
+	
+	
+    // Device API libraries are loading
+    
+    document.addEventListener("deviceready", networkshow, false);
+
+    // device APIs are ready
+    
+    function networkshow() {
+        checkConnection();
+    }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection type';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Mobile 2G connection';
+            states[Connection.CELL_3G]  = 'Mobile 3G connection';
+            states[Connection.CELL_4G]  = 'Mobile 4G connection';
+            states[Connection.CELL]     = 'Mobile generic connection';
+            states[Connection.NONE]     = 'No network';
+
+            alert('Type of connection: ' + states[networkState]);
+        }
+
+    </script>
+  </head>
+  <body>
+  <nav id="nav01"></nav>
+
+<div id="main">
+
+
+  <footer id="foot01"></footer>
+</div>
+    <p>Network Connection status</p>
+	
+   
+      </section>
+	
+		<script src="E:\Semester 5\Application development for mobile devices\Android Mobile\Network Connection single page nav\firstaap\www\js\script.js"></script>
+   <script type="text/javascript">
+$(function(){
+  $("#nav a").click(function(e){
+    e.preventDefault();
+    $('html,body').scrollTo(this.hash,this.hash); 
+  });
+});
+</script>
+  
+  </body>
+ 
+</html>
